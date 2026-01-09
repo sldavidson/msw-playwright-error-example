@@ -1,14 +1,14 @@
-import { useEffect, useState } from 'react';
-import './App.css';
+import { useEffect, useState } from 'react'
+import './App.css'
 
 type User = {
-  userId: string;
-  firstName: string;
-  lastName: string;
-  avatarUrl: string;
-};
+  userId: string
+  firstName: string
+  lastName: string
+  avatarUrl: string
+}
 function App() {
-  const [users, setUsers] = useState<User[]>([]);
+  const [users, setUsers] = useState<User[]>([])
 
   useEffect(() => {
     Promise.all([
@@ -17,8 +17,8 @@ function App() {
       fetch('/user/3').then(res => res.json()),
       fetch('/user/4').then(res => res.json()),
       fetch('/user/5').then(res => res.json()),
-    ]).then(data => setUsers(data));
-  }, []);
+    ]).then(data => setUsers(data))
+  }, [])
 
   return (
     <>
@@ -36,7 +36,7 @@ function App() {
         </div>
       ))}
     </>
-  );
+  )
 }
 
-export default App;
+export default App

@@ -1,12 +1,12 @@
 // playwright.setup.ts
-import { test as testBase } from '@playwright/test';
-import { createNetworkFixture, type NetworkFixture } from '@msw/playwright';
-import handlers from './mocks/handlers.js';
+import { test as testBase } from '@playwright/test'
+import { createNetworkFixture, type NetworkFixture } from '@msw/playwright'
+import { handlers } from './mocks/handlers.js'
 
-export { expect } from '@playwright/test';
+export { expect } from '@playwright/test'
 
 interface Fixtures {
-  network: NetworkFixture;
+  network: NetworkFixture
 }
 
 export const test = testBase.extend<Fixtures>({
@@ -14,4 +14,4 @@ export const test = testBase.extend<Fixtures>({
   network: createNetworkFixture({
     initialHandlers: handlers,
   }),
-});
+})
